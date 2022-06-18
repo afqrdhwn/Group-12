@@ -21,10 +21,15 @@ __Step 1__  - Go to the website https://docs.docker.com/desktop/windows/install/
               3.  Download and install the Linux kernel update package
               
 __Step 2__  - After the download has been completed, run the Docker Desktop Installer.exe file.
+
 __Step 3__  - Select the 'Use WSL 2 instead of Hyper V' option on the Configuration page when prompted.
+
 __Step 4__  - Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
+
 __Step 5__  - Close the installation wizard when the installation is successful.
+
 __Step 6__  - Open the Docker Desktop installed and complete the installation of WSL 2 backend (or update if needed)
+
 __Step 7__  - Restart your computer and Docker is ready to go! 
 
 ## Code and Commands
