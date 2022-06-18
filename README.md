@@ -1,4 +1,4 @@
-# Tutorial
+# Installing Docker for Apache, MySQL and PHPMYADMIN Tutorial
 
 ## Group Members
 
