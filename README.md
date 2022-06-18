@@ -33,6 +33,20 @@ __Step 6__  - Open the Docker Desktop installed and complete the installation of
 __Step 7__  - Restart your computer and Docker is ready to go! 
 
 ## Code and Commands
+__Step 1__  - Open your command prompt
 
+__Step 2__  - Create a folder for your project, type in: __mdkir <-poject name->__. Replace __<-project name->__ with whatever name you want for your project.
+
+__Step 3__  - Now, change the directory inside the command prompt to your project, type in: __cd <-project name->__.
+
+__Step 4__  - It should show something like this: __C:\Users\ACER\<-project name->__. Since my project's name is project it will show project.
+
+__Step 5__  - From here, type in: __code .__. This will open Visual Studio Code to edit your project's folder. If you still do not have Visual Studio Code, I recommend installing it as it is very helpful for your coding endeavors in the future.
+
+__Step 6__  - In your folder, you need to create a .yml file which contains the information of the services you need for your project(apache, mysql and myphpadmin). Type: __mkdir docker-compose.yml__ into your command prompt. You can name the file anything you want but in the future you need to remember the name.
+
+__Step 7__  - 
+
+__Step 8__  - 
 
 
