@@ -45,7 +45,7 @@ __Step 3__  - Now, change the directory inside the command prompt to your projec
 
 ![image](https://user-images.githubusercontent.com/103871912/174485546-46861b10-0ba6-4da0-bff7-dd9264e22b6e.png)
 
-__Step 4__  - It should show something like this: __C:\Users\ACER\<-project name->__. Since my project's name is project it will show project.
+__Step 4__  - It should show something like this: __C:\Users\user\<-project name->__. Since my project's name is project it will show project.
 
 ![image](https://user-images.githubusercontent.com/103871912/174485556-6d010499-a7c7-4233-a808-fcc24ed9ccb3.png)
 
