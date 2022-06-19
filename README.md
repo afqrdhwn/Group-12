@@ -34,7 +34,7 @@ __Step 7__  - Restart your computer and Docker is ready to go!
 ## Code and Commands
 __Step 1__  - Open your command prompt
 
-![image](https://user-images.githubusercontent.com/103871912/174485459-d9575ba4-a492-42c8-957d-818c210d441f.png)
+![image](https://user-images.githubusercontent.com/103871912/174486398-d7004018-3e95-467d-ac9f-42459242d1e6.png)
 
 __Step 2__  - Create a folder for your project, type in: __mkdir <-poject name->__. Replace __<-project name->__ with whatever name you want for your project.
 
