@@ -1,5 +1,4 @@
-# Installing Docker for Apache, MySQL and PHPMYADMIN Tutorial
-
+# Tutorial to Install Docker for Apache, MySQL and PHPMYADMIN on Windows OS
 ## Group Members
 
 1. Mohd Afiq Ridhwan bin Rosli (2014161)
