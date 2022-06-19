@@ -35,13 +35,23 @@ __Step 7__  - Restart your computer and Docker is ready to go!
 ## Code and Commands
 __Step 1__  - Open your command prompt
 
+![image](https://user-images.githubusercontent.com/103871912/174485459-d9575ba4-a492-42c8-957d-818c210d441f.png)
+
 __Step 2__  - Create a folder for your project, type in: __mkdir <-poject name->__. Replace __<-project name->__ with whatever name you want for your project.
+
+![image](https://user-images.githubusercontent.com/103871912/174485531-2f189333-4d00-4772-ae85-2c1d6f69b3db.png)
 
 __Step 3__  - Now, change the directory inside the command prompt to your project, type in: __cd <-project name->__.
 
+![image](https://user-images.githubusercontent.com/103871912/174485546-46861b10-0ba6-4da0-bff7-dd9264e22b6e.png)
+
 __Step 4__  - It should show something like this: __C:\Users\ACER\<-project name->__. Since my project's name is project it will show project.
 
+![image](https://user-images.githubusercontent.com/103871912/174485556-6d010499-a7c7-4233-a808-fcc24ed9ccb3.png)
+
 __Step 5__  - From here, type in: __code .__. This will open Visual Studio Code to edit your project's folder. If you still do not have Visual Studio Code, I recommend installing it as it is very helpful for your coding endeavors in the future.
+
+![image](https://user-images.githubusercontent.com/103871912/174485719-bc434ed3-4436-49b7-8e2e-8ee28b767537.png)
 
 __Step 6__  - In your folder, you need to create a .yml file which contains the information of the services you need for your project(apache, mysql and myphpadmin). Type: __mkdir docker-compose.yml__ into your command prompt. You can name the file anything you want but in the future you need to remember the name. The content of your .yml fileshould be: 
 
