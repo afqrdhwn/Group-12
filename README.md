@@ -105,7 +105,7 @@ In your index.php, fill in the following code (replace the existing ones):
                         } else {
                                  echo "Connected to MySQL server successfully!";
                         }
-                        ?>
+                      ?>
                       
 Now to see what changes in your project, you need to restart your project by typing: __docker-compose down__ and __docker-compose up__ again. Chech your Docker and you should see two sub-containers running in your project's container. Also, you can refresh your localhost:8000 and see whether the connection to your MYSQL database server is successful or not. If its successful it should display "Connected to MYSQL server successfully!".
 
