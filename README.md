@@ -68,19 +68,32 @@ To run your localhost type in __docker-compose up__ and after a it finishes load
 
 __Step 9__  - Here we are gonna add another environment for your propject which is MYSQL. To do this, add this MYSQL configuration inside the .yml file:
 
-                      db:
-                        container_name: db
-                        image: mysql
-                        restart: always
-                        environment:
-                                 MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
-                                 MYSQL_DATABASE: MY_DATABASE
-                                 MYSQL_USER: MYSQL_USER
-                                 MYSQL_PASSWORD: MYSQL_PASSWORD
-                        ports:
-                                 - "9906:3306"
+                      version: '3.8'
+                      services:
+                        php-apache-environment:
+                                 container_name: php-apache
+                                 build:
+                                   context: ./php
+                                   dockerfile: Dockerfile
+                                 depends_on:
+                                   - db
+                                 volumes:
+                                   - ./php/src:/var/www/html/
+                                 ports:
+                                   - 8000
+                        db:
+                                 container_name: db
+                                 image: mysql
+                                 restart: always
+                                 environment:
+                                   MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+                                   MYSQL_DATABASE: MYSQL_DATABASE
+                                   MYSQL_USER: MYSQL_USER
+                                   MYSQL_PASSWORD: MYSQL_PASSWORD
+                                 ports:
+                                   - "9906:3306"
                                  
-Then, head on to the /php folder and add a Dockerfile. Just type in: __mkdir Dockerfile__ after you get into /php and walla! A Dockerfile is a file which can only be recognize by Docker and it does not need any file type written. In the Dockerfile type:
+Note: you need to overwrite the previous code. Then, head on to the /php folder and add a Dockerfile. Just type in: __mkdir Dockerfile__ after you get into /php and walla! A Dockerfile is a file which can only be recognize by Docker and it does not need any file type written. In the Dockerfile type:
 
                       FROM php:8.0-apache
                       RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
@@ -107,6 +120,18 @@ In your index.php, fill in the following code (replace the existing ones):
                         }
                       ?>
                       
-Now to see what changes in your project, you need to restart your project by typing: __docker-compose down__ and __docker-compose up__ again. Chech your Docker and you should see two sub-containers running in your project's container. Also, you can refresh your localhost:8000 and see whether the connection to your MYSQL database server is successful or not. If its successful it should display "Connected to MYSQL server successfully!".
+Now to see what changes in your project, you need to restart your project by typing: __docker-compose down__ and __docker-compose up__ again. Check your Docker and you should see two sub-containers running in your project's container. Also, you can refresh your localhost:8000 and see whether the connection to your MYSQL database server is successful or not. If its successful it should display "Connected to MYSQL server successfully!".
 
-__Step 10__ 
+__Step 10__ This step will be the final step, which is adding phpmyadmin to your project. First, add this code under the existing code in your .yml file:
+
+                      phpmyadmin:
+                        image: phpmyadmin/phpmyadmin
+                        ports:
+                           - '8080:80'
+                        restart: always
+                        environment:
+                           PMA_HOST: db
+                        depends_on:
+                           - db
+
+Restart you project (__docker-compose down__ and __docker-compose up__) and open another tab on your browser and type in: __localhost:8080__. This is different from the previous localhost because we set up myphpadmin on port 8080 whereas MYSQL server is on 8000. It should display a login panel. To sign in, use the username: root and password: MYSQL_ROOT_PASSWORD as stated in the myphpadmin configuration. Now you are ready to develop your project using apache, MYSQL and myphpadmin. Happy Developing!
