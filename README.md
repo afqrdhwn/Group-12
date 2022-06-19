@@ -50,7 +50,7 @@ __Step 4__  - It should show something like this: __C:\Users\user\<-project name
 
 __Step 5__  - From here, type in: __code .__. This will open Visual Studio Code to edit your project's folder. If you still do not have Visual Studio Code, I recommend installing it as it is very helpful for your coding endeavors in the future.
 
-![image](https://user-images.githubusercontent.com/103871912/174485719-bc434ed3-4436-49b7-8e2e-8ee28b767537.png)
+![image](https://user-images.githubusercontent.com/103871912/174486328-ea0f3431-c199-48fb-b362-19d435f5d28e.png)
 
 __Step 6__  - In your folder, you need to create a .yml file which contains the information of the services you need for your project(apache, mysql and myphpadmin). Type: __mkdir docker-compose.yml__ into your command prompt. You can name the file anything you want but in the future you need to remember the name. The content of your .yml fileshould be: 
 
