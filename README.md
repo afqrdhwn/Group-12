@@ -35,7 +35,7 @@ __Step 7__  - Restart your computer and Docker is ready to go!
 ## Code and Commands
 __Step 1__  - Open your command prompt
 
-__Step 2__  - Create a folder for your project, type in: __mdkir <-poject name->__. Replace __<-project name->__ with whatever name you want for your project.
+__Step 2__  - Create a folder for your project, type in: __mkdir <-poject name->__. Replace __<-project name->__ with whatever name you want for your project.
 
 __Step 3__  - Now, change the directory inside the command prompt to your project, type in: __cd <-project name->__.
 
@@ -43,10 +43,27 @@ __Step 4__  - It should show something like this: __C:\Users\ACER\<-project name
 
 __Step 5__  - From here, type in: __code .__. This will open Visual Studio Code to edit your project's folder. If you still do not have Visual Studio Code, I recommend installing it as it is very helpful for your coding endeavors in the future.
 
-__Step 6__  - In your folder, you need to create a .yml file which contains the information of the services you need for your project(apache, mysql and myphpadmin). Type: __mkdir docker-compose.yml__ into your command prompt. You can name the file anything you want but in the future you need to remember the name.
+__Step 6__  - In your folder, you need to create a .yml file which contains the information of the services you need for your project(apache, mysql and myphpadmin). Type: __mkdir docker-compose.yml__ into your command prompt. You can name the file anything you want but in the future you need to remember the name. The content of your .yml fileshould be: 
 
-__Step 7__  - 
+                      version: '3.8'
+                      services:
+                        php-apache-environment:
+                          container_name: php-apache
+                          image: php:8.0-apache
+                          volumes:
+                          - ./php/src:/var/www/html/
+                          ports:
+                          - 8000
+                          
+This is the initial configuration for your localhost, from which you can view the project you are building.
+__Step 7__  - Go back to the command prompt and create another folder called __php__ and inside it another folder called ___src__ . The command for it is __mkdir php__, __cd php__ and __mkdir src__. In the src folder crete another folder called index.php. This index file is important as you will be editing the front end of your project here. So for Step 7, the directory for the folder php should be: __/php__, src: __/php/src__ and index.php: __/php/src/index.php__.
 
-__Step 8__  - 
+__Step 8__  - Add some lines of code in the index.php file and run your localhost server. Try adding:
 
+                      <?php
+                         echo "Hello World!";
+                      ?>
+                     
+To run your localhost type in __docker-compose up__ and after a it finishes loading everything in the command prompt, go to your favorite browser and type in: __localhost:8000__. You might have noticed that the port is the same as the code we put inside the .yml file and this is because most localhosts of any machine run on port 8000. In your screen, there should be a Hello World! displayed. You can alter the index.php file to develop your project after we have finished setting up all the environment needed. You can check in your Docker -> Containers and see that your project's first container is running.
 
+__Step 9__  - 
