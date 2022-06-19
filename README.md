@@ -66,4 +66,47 @@ __Step 8__  - Add some lines of code in the index.php file and run your localhos
                      
 To run your localhost type in __docker-compose up__ and after a it finishes loading everything in the command prompt, go to your favorite browser and type in: __localhost:8000__. You might have noticed that the port is the same as the code we put inside the .yml file and this is because most localhosts of any machine run on port 8000. In your screen, there should be a Hello World! displayed. You can alter the index.php file to develop your project after we have finished setting up all the environment needed. You can check in your Docker -> Containers and see that your project's first container is running.
 
-__Step 9__  - 
+__Step 9__  - Here we are gonna add another environment for your propject which is MYSQL. To do this, add this MYSQL configuration inside the .yml file:
+
+                      db:
+                        container_name: db
+                        image: mysql
+                        restart: always
+                        environment:
+                                 MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+                                 MYSQL_DATABASE: MY_DATABASE
+                                 MYSQL_USER: MYSQL_USER
+                                 MYSQL_PASSWORD: MYSQL_PASSWORD
+                        ports:
+                                 - "9906:3306"
+                                 
+Then, head on to the /php folder and add a Dockerfile. Just type in: __mkdir Dockerfile__ after you get into /php and walla! A Dockerfile is a file which can only be recognize by Docker and it does not need any file type written. In the Dockerfile type:
+
+                      FROM php:8.0-apache
+                      RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+                      RUN apt-get update && apt-get upgrade -y
+                      
+In your index.php, fill in the following code (replace the existing ones):  
+
+                      <?php
+
+                        $host = 'db';
+
+                        // database username
+                        $user = 'MYSQL_USER';
+
+                        // database user password
+                        $pass = 'MYSQL_PASSWORD';
+
+                        // check the MySQL connection status
+                        $conn = new mysqli($host, $user, $pass);
+                        if ($conn->connect_error) {
+                                 die("Connection failed: " . $conn->connect_error);
+                        } else {
+                                 echo "Connected to MySQL server successfully!";
+                        }
+                        ?>
+                      
+Now to see what changes in your project, you need to restart your project by typing: __docker-compose down__ and __docker-compose up__ again. Chech your Docker and you should see two sub-containers running in your project's container. Also, you can refresh your localhost:8000 and see whether the connection to your MYSQL database server is successful or not. If its successful it should display "Connected to MYSQL server successfully!".
+
+__Step 10__ 
